@@ -13,9 +13,10 @@ To create the project itself, run the following command:
 ```bash
 django-admin startproject project_name
 ```
-To start a local server, use this command:
+To start a local server, use this command over the created folder with the same name as the project_name:
 
 ```bash
+cd project_name
 python path_to_your_manage.py runserver
 ```
 
@@ -31,3 +32,13 @@ When a browser makes a request to a URL on your Django website (e.g., '/about'),
 
 
 > **Note**: When creating a project, Django automatically generates a `urls.py`, file, but it does not create a `views.py` file. This file must be created manually when needed.
+
+## Creating an App
+
+Whith the following command you can create an app: 
+
+```bash
+django-admin startapp app_name
+```
+
+> **Note**: This thing is a functionality of the project, for example an authentification system would be an app for the django project, an Posts CRUD for a blog could be a good example for an app functionality.
