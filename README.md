@@ -42,3 +42,19 @@ django-admin startapp app_name
 ```
 
 > **Note**: This thing is a functionality of the project, for example an authentification system would be an app for the django project, an Posts CRUD for a blog could be a good example for an app functionality.
+
+## Migration
+
+We have to do a migration file to migrate the models to the database, to make the migrations we should put
+
+```bash
+python manage.py makemigrations
+```
+
+> **Note**: Remember that u have to put the app on the settings.py main file or wouldn't detect the changes on the model
+
+And then to apply the migrations we should use
+
+```bash
+python manage.py migrate
+```
