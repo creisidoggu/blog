@@ -58,3 +58,25 @@ And then to apply the migrations we should use
 ```bash
 python manage.py migrate
 ```
+
+## ORM
+
+To enter the terminal of our database we enter the next command:
+
+```bash
+python manage.py shell
+```
+
+On the shell we could create a table like i created the Posts table with
+
+```bash
+from posts.models import Posts
+```
+
+After that we can see that Posts is a class __posts.models.Posts__, we can see all the items with the following command:
+
+```bash
+Posts.objects.all()
+```
+
+I we want to create an instance of an object is like in python (with the difference that after instancing u have to save it) and we can modify like in python.
