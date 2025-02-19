@@ -67,16 +67,29 @@ To enter the terminal of our database we enter the next command:
 python manage.py shell
 ```
 
-On the shell we could create a table like i created the Posts table with
+On the shell we could create a table like i created the Post table with
 
 ```bash
-from posts.models import Posts
+from post.models import Post
 ```
 
-After that we can see that Posts is a class __posts.models.Posts__, we can see all the items with the following command:
+After that we can see that Posts is a class __posts.models.Post__, we can see all the items with the following command:
 
 ```bash
-Posts.objects.all()
+Post.objects.all()
 ```
 
 I we want to create an instance of an object is like in python (with the difference that after instancing u have to save it) and we can modify like in python.
+
+## Admin section
+
+When u go to the _/admin_ on the url u have to enter a login form, if u try to log in u don't have any user.
+
+To create an superuser for us we have to enter:
+
+```bash
+python manage.py createsuperuser
+```
+
+U can add to the /admin section a model adding to the admin.py of the app the importation of the model
+> **Note**: If you don't see properly the model u should put the str dunder on the class.
