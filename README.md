@@ -94,6 +94,13 @@ post = Post(title="My first post", content="This is the content")
 post.save()
 ```
 
+```python
+post = Post()
+post.title="My first post"
+post.content="This is the content"
+post.save()
+```
+
 > ⚠️ **Note**: Unlike plain Python 🐍, you must execute `.save()` to store the instance in the database.
 
 ---
