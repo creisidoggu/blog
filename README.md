@@ -29,8 +29,8 @@ This command also creates an SQLite database 🗄️ (`db.sqlite3`).
 
 When a browser 🌐 requests a URL (e.g., `/about`), Django follows these steps:
 
-1️⃣ **Checks ****`urls.py`**** 📜**: Determines which view will handle the request.
-2️⃣ **Executes ****`views.py`**** ⚡**: Selects the appropriate function.
+1️⃣ **Checks `urls.py` 📜**: Determines which view will handle the request.
+2️⃣ **Executes `views.py` ⚡**: Selects the appropriate function.
 3️⃣ **Renders response 📺**: Displays the content in the browser.
 
 > ⚠️ **Note**: Django creates `urls.py` automatically, but `views.py` must be manually created.
@@ -94,13 +94,6 @@ post = Post(title="My first post", content="This is the content")
 post.save()
 ```
 
-```python
-post = Post()
-post.title="My first post"
-post.content="This is the content"
-post.save()
-```
-
 > ⚠️ **Note**: Unlike plain Python 🐍, you must execute `.save()` to store the instance in the database.
 
 ---
@@ -126,5 +119,38 @@ admin.site.register(Post)
 
 ---
 
+## 7️⃣ Template Tag System 🎨
 
+Django uses a template system to dynamically generate HTML pages. In a template file, the `{% ... %}` and `{{ ... }}` syntax is used:
 
+- `{% for post in posts %} ... {% endfor %}`: Loop through a list of objects.
+- `{{ post.title }}`: Insert dynamic content into the page.
+
+Example of a Django template rendering a list of posts:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+</head>
+<body>
+    <h1>Posts</h1>
+    <div class="posts">
+        <!-- Loop through posts -->
+        {% for post in posts %}
+            <div class="post">
+                <!-- Display post details -->
+                <h2><a href="#">{{ post.title }}</a></h2>
+                <p>{{ post.body }}</p>
+                <p>{{ post.date }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
+```
+
+This template will generate an HTML page listing all posts stored in the database dynamically.
