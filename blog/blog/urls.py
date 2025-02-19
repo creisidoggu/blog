@@ -17,7 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from blog import views
-from post import urls
+import post
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,3 +26,6 @@ urlpatterns = [
     path('', views.main),
     path('post/', include('post.urls')),
 ]
+
+#urlpatterns will see if we are in debug mode and if we are it'll append staticfiles_urlpatterns 
+urlpatterns += staticfiles_urlpatterns()

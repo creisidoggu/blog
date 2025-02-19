@@ -11,3 +11,6 @@ class Post(models.Model):
     
     def __str__(self):
         return self.title
+    #Reduce the text for the view of the posts list
+    def snippet(self):
+        return f"{self.body[:50]} ..."
